@@ -2,19 +2,18 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class StudentGroup implements Iterable<Student>{
+public class StudentGroup implements Iterable<Student> {
     private Integer groupId;
     private List<Student> studentGroup;
 
     public StudentGroup(Integer groupId) {
         this.groupId = groupId;
-        this.studentGroup = new ArrayList<Student>();
+        this.studentGroup = new ArrayList<>();
     }
 
     public StudentGroup(Integer groupId, List<Student> students) {
         this.groupId = groupId;
         this.studentGroup = students;
-
     }
 
     public List<Student> getStudentGroup() {
@@ -40,15 +39,15 @@ public class StudentGroup implements Iterable<Student>{
 
     @Override
     public Iterator<Student> iterator() {
-        return new StudentGroupInerator(this);
+        return new StudentGroupIterator(this);
     }
 
-    public boolean addStudent(Student student){
+    public boolean addStudent(Student student) {
         if (studentGroup != null) {
             studentGroup.add(student);
             return true;
         }
         return false;
     }
-
 }
+
