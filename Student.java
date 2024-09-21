@@ -1,4 +1,4 @@
-public class Student implements Comparable<Student>{
+public class Student implements Comparable<Student> {
     private Integer studentId;
     private String surname;
     private String firstname;
@@ -45,19 +45,11 @@ public class Student implements Comparable<Student>{
 
     @Override
     public String toString() {
-        return "Student [studentId=" + studentId + ", surname=" + surname + ", firstname=" + firstname + ", patronymic="
-                + patronymic + "]";
+        return "Student [studentId=" + studentId + ", surname=" + surname + ", firstname=" + firstname + ", patronymic=" + patronymic + "]";
     }
 
     @Override
     public int compareTo(Student o) {
-        if (this.studentId > o.studentId){
-            return 1;
-        } else if (this.studentId < o.studentId){
-            return -1;
-        } else{ 
-            return 0;
-        }
+        return this.studentId.compareTo(o.studentId);
     }
-
 }
