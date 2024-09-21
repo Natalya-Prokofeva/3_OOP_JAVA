@@ -9,23 +9,23 @@ public class StudentGroupService {
     }
 
     public boolean removeStudent(String surname, String firstname, String patronymic) {
-        Iterator<Student> iteratorStudents = studentsGroup.iterator();
-        while (iteratorStudents.hasNext()) {
-            Student student = iteratorStudents.next();
+        Iterator<Student> iterator = studentsGroup.iterator();
+        while (iterator.hasNext()) {
+            Student student = iterator.next();
             if (student.getSurname().equals(surname) && student.getFirstname().equals(firstname)
                     && student.getPatronymic().equals(patronymic)) {
-                iteratorStudents.remove();
+                iterator.remove();
                 return true;
             }
         }
         return false;
     }
 
-    public void sortStudentsById(){
+    public void sortStudentsById() {
         Collections.sort(studentsGroup.getStudentGroup());
     }
 
-    public void sortStudentsByName(){
+    public void sortStudentsByName() {
         studentsGroup.getStudentGroup().sort(new StudentComparator());
     }
 
