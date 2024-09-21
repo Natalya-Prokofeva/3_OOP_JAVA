@@ -4,7 +4,6 @@ import java.util.List;
 public class StudentGroupIterator implements Iterator<Student> {
 
     private List<Student> studentsGroup;
-
     private int index;
 
     public StudentGroupIterator(StudentGroup studentsGroup) {
@@ -14,7 +13,7 @@ public class StudentGroupIterator implements Iterator<Student> {
 
     @Override
     public boolean hasNext() {
-        return index < studentsGroup.size()-1 ;
+        return index < studentsGroup.size() - 1;
     }
 
     @Override
@@ -31,5 +30,4 @@ public class StudentGroupIterator implements Iterator<Student> {
             studentsGroup.remove(index);
         }
     }
-
 }
